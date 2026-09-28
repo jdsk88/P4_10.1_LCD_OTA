@@ -1,13 +1,14 @@
-Pliki wydań pod adresami z numerem wersji
+Suwak nie cofa już widoku do poprzedniej strony
 
-Manifest i obrazy firmware idą przez cache GitHuba (5 minut), a każdy plik
-odświeża się w nim niezależnie. Tuż po wydaniu panel mógł więc dostać już
-nowy manifest, ale jeszcze stary obraz - i zgłosić „niezgodną sumę
-kontrolną”. Teraz każde wydanie ma pliki o unikalnych nazwach
-(firmware-<wariant>-vX.Y.Z.bin), więc taka mieszanka jest niemożliwa.
-Workflow zostawia w repo obrazy poprzedniego wydania (dla manifestu, który
-może jeszcze wisieć w cache) i sprząta starsze.
+Przesunięcie suwaka w prawo (np. jasności albo prędkości wentylatora)
+i puszczenie go przenosiło widok do poprzedniej strony. LVGL wysyła gest
+„machnięcie w prawo” jeszcze w trakcie przeciągania, a panel traktuje taki
+gest jako „wstecz” - ruch suwakiem wyglądał więc jak nawigacja.
 
-Na panelu ta wersja niczego nie zmienia - służy też do sprawdzenia poprawki
-z 1.4.2: podczas zapisu firmware ekran powinien zgasnąć po komunikacie,
-zamiast migotać na niebiesko.
+Zmiany:
+- gest powrotu jest ignorowany, gdy palec operuje widżetem przyjmującym
+  poziome przeciąganie: suwakiem, przełącznikiem, pierścieniem oczyszczacza
+  lub kursorem wykresu
+- machnięcie w prawo poza takimi widżetami dalej cofa jak dotąd
+- test w symulatorze odtwarza błąd na suwaku jasności (bez poprawki
+  faktycznie wychodzi ze strony) i pilnuje obu zachowań

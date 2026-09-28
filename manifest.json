@@ -1,17 +1,17 @@
 {
-  "version": "1.4.4",
+  "version": "1.4.5",
   "date": "2026-09-28",
-  "notes": "Pliki wydań pod adresami z numerem wersji\n\nManifest i obrazy firmware idą przez cache GitHuba (5 minut), a każdy plik\nodświeża się w nim niezależnie. Tuż po wydaniu panel mógł więc dostać już\nnowy manifest, ale jeszcze stary obraz - i zgłosić „niezgodną sumę\nkontrolną”. Teraz każde wydanie ma pliki o unikalnych nazwach\n(firmware-<wariant>-vX.Y.Z.bin), więc taka mieszanka jest niemożliwa.\nWorkflow zostawia w repo obrazy poprzedniego wydania (dla manifestu, który\nmoże jeszcze wisieć w cache) i sprząta starsze.\n\nNa panelu ta wersja niczego nie zmienia - służy też do sprawdzenia poprawki\nz 1.4.2: podczas zapisu firmware ekran powinien zgasnąć po komunikacie,\nzamiast migotać na niebiesko.",
+  "notes": "Suwak nie cofa już widoku do poprzedniej strony\n\nPrzesunięcie suwaka w prawo (np. jasności albo prędkości wentylatora)\ni puszczenie go przenosiło widok do poprzedniej strony. LVGL wysyła gest\n„machnięcie w prawo” jeszcze w trakcie przeciągania, a panel traktuje taki\ngest jako „wstecz” - ruch suwakiem wyglądał więc jak nawigacja.\n\nZmiany:\n- gest powrotu jest ignorowany, gdy palec operuje widżetem przyjmującym\n  poziome przeciąganie: suwakiem, przełącznikiem, pierścieniem oczyszczacza\n  lub kursorem wykresu\n- machnięcie w prawo poza takimi widżetami dalej cofa jak dotąd\n- test w symulatorze odtwarza błąd na suwaku jasności (bez poprawki\n  faktycznie wychodzi ze strony) i pilnuje obu zachowań",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.4.4.bin",
-      "size": 2452000,
-      "sha256": "7887bc5bba26e7b853fe972d86eae8e94667389cf16d338f723acd7a527e28eb"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.4.5.bin",
+      "size": 2452144,
+      "sha256": "e38f8a8004d894979f6b43a448fdc75a7f97d4a44c5bcb5d1e5ccb3238b7dc0f"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.4.4.bin",
-      "size": 2454752,
-      "sha256": "dd82990470ac2f004474aefbe9699fb9e90b7ff47587d3820148eb97b16834bf"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.4.5.bin",
+      "size": 2454896,
+      "sha256": "c37994c49c723d1b0f076c29a041b22cb70e9afb98533ad107e2daa0d16f0571"
     }
   }
 }
