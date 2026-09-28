@@ -1,14 +1,15 @@
-Suwak nie cofa już widoku do poprzedniej strony
+v1.5.0: motywy kolorystyczne i naprawa przycisku wentylatora
 
-Przesunięcie suwaka w prawo (np. jasności albo prędkości wentylatora)
-i puszczenie go przenosiło widok do poprzedniej strony. LVGL wysyła gest
-„machnięcie w prawo” jeszcze w trakcie przeciągania, a panel traktuje taki
-gest jako „wstecz” - ruch suwakiem wyglądał więc jak nawigacja.
+Nowości:
+- Ustawienia -> Wyświetlacz: wybór motywu kolorów obok trybu ciemny/jasny.
+  Sześć schematów: Domyślny, Zielony, Niebieski, Fioletowy, Lekko niebieski
+  i Lekko biały - każdy z osobną paletą ciemną i jasną, więc łączy się
+  z przełącznikiem trybu. Wybiera się je kolorowymi kółkami, zmiana działa
+  natychmiast. Odcienie dobrane pod RGB565, żeby nic nie prążkowało.
 
-Zmiany:
-- gest powrotu jest ignorowany, gdy palec operuje widżetem przyjmującym
-  poziome przeciąganie: suwakiem, przełącznikiem, pierścieniem oczyszczacza
-  lub kursorem wykresu
-- machnięcie w prawo poza takimi widżetami dalej cofa jak dotąd
-- test w symulatorze odtwarza błąd na suwaku jasności (bez poprawki
-  faktycznie wychodzi ze strony) i pilnuje obu zachowań
+Poprawki:
+- przycisk zasilania oczyszczacza reaguje natychmiast po dotknięciu;
+  wcześniej odświeżał się dopiero po pół sekundy, a szybkie drugie
+  stuknięcie wysyłało tę samą komendę zamiast przełączyć z powrotem -
+  przycisk sprawiał wrażenie zawieszonego. Wybór trybu pracy także
+  podświetla się od razu.

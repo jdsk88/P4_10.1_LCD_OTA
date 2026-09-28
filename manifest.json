@@ -1,17 +1,17 @@
 {
-  "version": "1.4.5",
+  "version": "1.5.0",
   "date": "2026-09-28",
-  "notes": "Suwak nie cofa już widoku do poprzedniej strony\n\nPrzesunięcie suwaka w prawo (np. jasności albo prędkości wentylatora)\ni puszczenie go przenosiło widok do poprzedniej strony. LVGL wysyła gest\n„machnięcie w prawo” jeszcze w trakcie przeciągania, a panel traktuje taki\ngest jako „wstecz” - ruch suwakiem wyglądał więc jak nawigacja.\n\nZmiany:\n- gest powrotu jest ignorowany, gdy palec operuje widżetem przyjmującym\n  poziome przeciąganie: suwakiem, przełącznikiem, pierścieniem oczyszczacza\n  lub kursorem wykresu\n- machnięcie w prawo poza takimi widżetami dalej cofa jak dotąd\n- test w symulatorze odtwarza błąd na suwaku jasności (bez poprawki\n  faktycznie wychodzi ze strony) i pilnuje obu zachowań",
+  "notes": "v1.5.0: motywy kolorystyczne i naprawa przycisku wentylatora\n\nNowości:\n- Ustawienia -> Wyświetlacz: wybór motywu kolorów obok trybu ciemny/jasny.\n  Sześć schematów: Domyślny, Zielony, Niebieski, Fioletowy, Lekko niebieski\n  i Lekko biały - każdy z osobną paletą ciemną i jasną, więc łączy się\n  z przełącznikiem trybu. Wybiera się je kolorowymi kółkami, zmiana działa\n  natychmiast. Odcienie dobrane pod RGB565, żeby nic nie prążkowało.\n\nPoprawki:\n- przycisk zasilania oczyszczacza reaguje natychmiast po dotknięciu;\n  wcześniej odświeżał się dopiero po pół sekundy, a szybkie drugie\n  stuknięcie wysyłało tę samą komendę zamiast przełączyć z powrotem -\n  przycisk sprawiał wrażenie zawieszonego. Wybór trybu pracy także\n  podświetla się od razu.",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.4.5.bin",
-      "size": 2452144,
-      "sha256": "e38f8a8004d894979f6b43a448fdc75a7f97d4a44c5bcb5d1e5ccb3238b7dc0f"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.5.0.bin",
+      "size": 2452960,
+      "sha256": "61dcf33871d08883e7bc3e9c40263ae994bcab3cc53ba438ec65bc747c4aec34"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.4.5.bin",
-      "size": 2454896,
-      "sha256": "c37994c49c723d1b0f076c29a041b22cb70e9afb98533ad107e2daa0d16f0571"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.5.0.bin",
+      "size": 2455664,
+      "sha256": "2468f517d5e1179728793b236c561269d02a92683906eeba56887be077ca9063"
     }
   }
 }
