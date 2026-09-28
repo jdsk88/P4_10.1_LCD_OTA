@@ -1,21 +1,16 @@
-Naprawa OTA: pobieranie do PSRAM przed zapisem flasha
+Poczta: nie odrzucaj haseł, których panel nie zgadł
 
-Aktualizacja przez OTA kończyła się błędem „pobieranie przerwane (stalled)”
-i zrywała łączność Wi-Fi aż do restartu panelu.
-
-Przyczyna: biblioteka Update kasuje flash blokami po 64 KB dopiero w trakcie
-zapisu, a dotychczasowy kod zapisywał obraz na bieżąco, w pętli pobierania.
-Każde kasowanie blokuje pamięć podręczną na setki milisekund, więc host nie
-obsługuje przerwań SDIO i łącze ESP-Hosted do ESP32-C6 rozpada się na dobre.
+Pole hasła aplikacji wymagało dokładnie 16 liter, bez cyfr i innych znaków.
+Hasła w innym formacie panel po prostu odrzucał i nie dało się ich zapisać.
+Do tego w klawiaturze brakowało czterech znaków ASCII (^ ` | ~), więc hasła
+z którymkolwiek z nich nie szło nawet wpisać.
 
 Zmiany:
-- instalacja w dwóch etapach: cały obraz trafia najpierw do PSRAM, a flash
-  jest zapisywany dopiero po zamknięciu połączenia HTTPS
-- suma SHA-256 sprawdzana przed dotknięciem flasha
-- zapis porcjami przez bufor w RAM wewnętrznym, żeby esp_flash_write nie
-  musiał kopiować z PSRAM i nie mógł polec na braku pamięci
-- osobne komunikaty postępu: „Pobieranie %” oraz „Instalowanie % - nie wyłączaj”
-- notatki wydania pokazywane na panelu bez technicznych stopek commita
-
-Uwaga: wersje starsze niż 1.4.1 nie zainstalują tej poprawki przez OTA,
-pierwsze wgranie musi pójść przez USB.
+- hasło jest sprawdzane tylko pod kątem tego, czy nie jest puste; format
+  ocenia serwer i zgłasza to jako "Logowanie nieudane"
+- limit długości podniesiony z 24 do 64 znaków
+- spacje są usuwane tylko wtedy, gdy wyglądają na sposób, w jaki Google
+  wyświetla hasło aplikacji (cztery grupy po cztery litery); każde inne
+  hasło zapisuje się dokładnie tak, jak je wpisano
+- warstwa znaków specjalnych klawiatury obejmuje teraz każdy drukowalny
+  znak ASCII, w pięciu wierszach

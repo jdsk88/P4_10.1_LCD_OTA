@@ -1,17 +1,17 @@
 {
-  "version": "1.4.1",
+  "version": "1.4.3",
   "date": "2026-09-28",
-  "notes": "Naprawa OTA: pobieranie do PSRAM przed zapisem flasha\n\nAktualizacja przez OTA kończyła się błędem „pobieranie przerwane (stalled)”\ni zrywała łączność Wi-Fi aż do restartu panelu.\n\nPrzyczyna: biblioteka Update kasuje flash blokami po 64 KB dopiero w trakcie\nzapisu, a dotychczasowy kod zapisywał obraz na bieżąco, w pętli pobierania.\nKażde kasowanie blokuje pamięć podręczną na setki milisekund, więc host nie\nobsługuje przerwań SDIO i łącze ESP-Hosted do ESP32-C6 rozpada się na dobre.\n\nZmiany:\n- instalacja w dwóch etapach: cały obraz trafia najpierw do PSRAM, a flash\n  jest zapisywany dopiero po zamknięciu połączenia HTTPS\n- suma SHA-256 sprawdzana przed dotknięciem flasha\n- zapis porcjami przez bufor w RAM wewnętrznym, żeby esp_flash_write nie\n  musiał kopiować z PSRAM i nie mógł polec na braku pamięci\n- osobne komunikaty postępu: „Pobieranie %” oraz „Instalowanie % - nie wyłączaj”\n- notatki wydania pokazywane na panelu bez technicznych stopek commita\n\nUwaga: wersje starsze niż 1.4.1 nie zainstalują tej poprawki przez OTA,\npierwsze wgranie musi pójść przez USB.",
+  "notes": "Poczta: nie odrzucaj haseł, których panel nie zgadł\n\nPole hasła aplikacji wymagało dokładnie 16 liter, bez cyfr i innych znaków.\nHasła w innym formacie panel po prostu odrzucał i nie dało się ich zapisać.\nDo tego w klawiaturze brakowało czterech znaków ASCII (^ ` | ~), więc hasła\nz którymkolwiek z nich nie szło nawet wpisać.\n\nZmiany:\n- hasło jest sprawdzane tylko pod kątem tego, czy nie jest puste; format\n  ocenia serwer i zgłasza to jako \"Logowanie nieudane\"\n- limit długości podniesiony z 24 do 64 znaków\n- spacje są usuwane tylko wtedy, gdy wyglądają na sposób, w jaki Google\n  wyświetla hasło aplikacji (cztery grupy po cztery litery); każde inne\n  hasło zapisuje się dokładnie tak, jak je wpisano\n- warstwa znaków specjalnych klawiatury obejmuje teraz każdy drukowalny\n  znak ASCII, w pięciu wierszach",
   "firmware": {
     "jc8012p4a1": {
       "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1.bin",
-      "size": 2451696,
-      "sha256": "1e22f887343df54d60214a6a1bb14e6d2a328175e61836108f735f4acf50cfcf"
+      "size": 2452000,
+      "sha256": "3d5d316873d7fe6546bae6da814dfd65d2727ad6da5fb07ad731baf668a69f66"
     },
     "jc8012p4a1_r3": {
       "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3.bin",
-      "size": 2454432,
-      "sha256": "754086039fa3596d614dc4c438a06620695732666318371efa678466d36b1a32"
+      "size": 2454752,
+      "sha256": "b082aaa40bb370081aead07b8459512092238a047a54653647502c535582ecbb"
     }
   }
 }
