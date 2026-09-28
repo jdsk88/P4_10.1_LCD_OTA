@@ -1,16 +1,13 @@
-Poczta: nie odrzucaj haseł, których panel nie zgadł
+Pliki wydań pod adresami z numerem wersji
 
-Pole hasła aplikacji wymagało dokładnie 16 liter, bez cyfr i innych znaków.
-Hasła w innym formacie panel po prostu odrzucał i nie dało się ich zapisać.
-Do tego w klawiaturze brakowało czterech znaków ASCII (^ ` | ~), więc hasła
-z którymkolwiek z nich nie szło nawet wpisać.
+Manifest i obrazy firmware idą przez cache GitHuba (5 minut), a każdy plik
+odświeża się w nim niezależnie. Tuż po wydaniu panel mógł więc dostać już
+nowy manifest, ale jeszcze stary obraz - i zgłosić „niezgodną sumę
+kontrolną”. Teraz każde wydanie ma pliki o unikalnych nazwach
+(firmware-<wariant>-vX.Y.Z.bin), więc taka mieszanka jest niemożliwa.
+Workflow zostawia w repo obrazy poprzedniego wydania (dla manifestu, który
+może jeszcze wisieć w cache) i sprząta starsze.
 
-Zmiany:
-- hasło jest sprawdzane tylko pod kątem tego, czy nie jest puste; format
-  ocenia serwer i zgłasza to jako "Logowanie nieudane"
-- limit długości podniesiony z 24 do 64 znaków
-- spacje są usuwane tylko wtedy, gdy wyglądają na sposób, w jaki Google
-  wyświetla hasło aplikacji (cztery grupy po cztery litery); każde inne
-  hasło zapisuje się dokładnie tak, jak je wpisano
-- warstwa znaków specjalnych klawiatury obejmuje teraz każdy drukowalny
-  znak ASCII, w pięciu wierszach
+Na panelu ta wersja niczego nie zmienia - służy też do sprawdzenia poprawki
+z 1.4.2: podczas zapisu firmware ekran powinien zgasnąć po komunikacie,
+zamiast migotać na niebiesko.

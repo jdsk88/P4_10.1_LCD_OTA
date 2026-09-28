@@ -1,17 +1,17 @@
 {
-  "version": "1.4.3",
+  "version": "1.4.4",
   "date": "2026-09-28",
-  "notes": "Poczta: nie odrzucaj haseł, których panel nie zgadł\n\nPole hasła aplikacji wymagało dokładnie 16 liter, bez cyfr i innych znaków.\nHasła w innym formacie panel po prostu odrzucał i nie dało się ich zapisać.\nDo tego w klawiaturze brakowało czterech znaków ASCII (^ ` | ~), więc hasła\nz którymkolwiek z nich nie szło nawet wpisać.\n\nZmiany:\n- hasło jest sprawdzane tylko pod kątem tego, czy nie jest puste; format\n  ocenia serwer i zgłasza to jako \"Logowanie nieudane\"\n- limit długości podniesiony z 24 do 64 znaków\n- spacje są usuwane tylko wtedy, gdy wyglądają na sposób, w jaki Google\n  wyświetla hasło aplikacji (cztery grupy po cztery litery); każde inne\n  hasło zapisuje się dokładnie tak, jak je wpisano\n- warstwa znaków specjalnych klawiatury obejmuje teraz każdy drukowalny\n  znak ASCII, w pięciu wierszach",
+  "notes": "Pliki wydań pod adresami z numerem wersji\n\nManifest i obrazy firmware idą przez cache GitHuba (5 minut), a każdy plik\nodświeża się w nim niezależnie. Tuż po wydaniu panel mógł więc dostać już\nnowy manifest, ale jeszcze stary obraz - i zgłosić „niezgodną sumę\nkontrolną”. Teraz każde wydanie ma pliki o unikalnych nazwach\n(firmware-<wariant>-vX.Y.Z.bin), więc taka mieszanka jest niemożliwa.\nWorkflow zostawia w repo obrazy poprzedniego wydania (dla manifestu, który\nmoże jeszcze wisieć w cache) i sprząta starsze.\n\nNa panelu ta wersja niczego nie zmienia - służy też do sprawdzenia poprawki\nz 1.4.2: podczas zapisu firmware ekran powinien zgasnąć po komunikacie,\nzamiast migotać na niebiesko.",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1.bin",
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.4.4.bin",
       "size": 2452000,
-      "sha256": "3d5d316873d7fe6546bae6da814dfd65d2727ad6da5fb07ad731baf668a69f66"
+      "sha256": "7887bc5bba26e7b853fe972d86eae8e94667389cf16d338f723acd7a527e28eb"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3.bin",
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.4.4.bin",
       "size": 2454752,
-      "sha256": "b082aaa40bb370081aead07b8459512092238a047a54653647502c535582ecbb"
+      "sha256": "dd82990470ac2f004474aefbe9699fb9e90b7ff47587d3820148eb97b16834bf"
     }
   }
 }
