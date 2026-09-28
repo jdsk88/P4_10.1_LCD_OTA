@@ -1,17 +1,17 @@
 {
-  "version": "1.4.0",
+  "version": "1.4.1",
   "date": "2026-09-28",
-  "notes": "gmail",
+  "notes": "Naprawa OTA: pobieranie do PSRAM przed zapisem flasha\n\nAktualizacja przez OTA kończyła się błędem „pobieranie przerwane (stalled)”\ni zrywała łączność Wi-Fi aż do restartu panelu.\n\nPrzyczyna: biblioteka Update kasuje flash blokami po 64 KB dopiero w trakcie\nzapisu, a dotychczasowy kod zapisywał obraz na bieżąco, w pętli pobierania.\nKażde kasowanie blokuje pamięć podręczną na setki milisekund, więc host nie\nobsługuje przerwań SDIO i łącze ESP-Hosted do ESP32-C6 rozpada się na dobre.\n\nZmiany:\n- instalacja w dwóch etapach: cały obraz trafia najpierw do PSRAM, a flash\n  jest zapisywany dopiero po zamknięciu połączenia HTTPS\n- suma SHA-256 sprawdzana przed dotknięciem flasha\n- zapis porcjami przez bufor w RAM wewnętrznym, żeby esp_flash_write nie\n  musiał kopiować z PSRAM i nie mógł polec na braku pamięci\n- osobne komunikaty postępu: „Pobieranie %” oraz „Instalowanie % - nie wyłączaj”\n- notatki wydania pokazywane na panelu bez technicznych stopek commita\n\nUwaga: wersje starsze niż 1.4.1 nie zainstalują tej poprawki przez OTA,\npierwsze wgranie musi pójść przez USB.",
   "firmware": {
     "jc8012p4a1": {
       "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1.bin",
-      "size": 2451152,
-      "sha256": "669b77ab4bdd0c4d046d99869eda7e2aee69f6fac1ff1d6c76d3c0683d261e0c"
+      "size": 2451696,
+      "sha256": "1e22f887343df54d60214a6a1bb14e6d2a328175e61836108f735f4acf50cfcf"
     },
     "jc8012p4a1_r3": {
       "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3.bin",
-      "size": 2453888,
-      "sha256": "fb780ecb55cc16f1719fcfddf7a9f7e9f83b3a873d3011e4612c39221fdf8454"
+      "size": 2454432,
+      "sha256": "754086039fa3596d614dc4c438a06620695732666318371efa678466d36b1a32"
     }
   }
 }
