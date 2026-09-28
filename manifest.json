@@ -1,17 +1,17 @@
 {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "date": "2026-09-28",
-  "notes": "ota repo rename",
+  "notes": "gmail",
   "firmware": {
     "jc8012p4a1": {
       "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1.bin",
-      "size": 2376256,
-      "sha256": "2db3a9b388df2ae69381873a4915691e8f06931908ba96ceab7b4d4a9524bcd1"
+      "size": 2451152,
+      "sha256": "669b77ab4bdd0c4d046d99869eda7e2aee69f6fac1ff1d6c76d3c0683d261e0c"
     },
     "jc8012p4a1_r3": {
       "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3.bin",
-      "size": 2379040,
-      "sha256": "1fd1ebb97596dc0bcd79bce80320b4811c5d9f3c366bbd60ff77e4711af3bfac"
+      "size": 2453888,
+      "sha256": "fb780ecb55cc16f1719fcfddf7a9f7e9f83b3a873d3011e4612c39221fdf8454"
     }
   }
 }
