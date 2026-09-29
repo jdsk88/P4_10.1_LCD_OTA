@@ -1,17 +1,17 @@
 {
-  "version": "1.7.0",
+  "version": "1.7.1",
   "date": "2026-09-29",
-  "notes": "1.6.0: panel WWW - pełna funkcjonalność w przeglądarce\n\nNowości:\n- wbudowany serwer WWW: strona pod http://<adres-panelu>/ (albo\n  http://jc8012-panel.local/), logowanie: admin + hasło hotspotu\n- zakładki: status systemu, urządzenia ESP-NOW (parowanie, sterowanie\n  oczyszczaczem, pomiary, wykresy z historii, zmiana nazwy, ping, usuwanie),\n  poczta (skrzynka, odczyt, odpowiedź), ustawienia wyświetlacza i języka,\n  konto Gmail, sieć Wi-Fi (skanowanie, statyczne IP, hotspot) oraz\n  aktualizacje OTA, restart i reset fabryczny\n- REST API pod /api/* (JSON, HTTP Basic auth)\n- strona jest wbudowana w firmware, więc zawsze pasuje do działającej\n  wersji i aktualizuje się razem z nią przez OTA\n\n\nv1.7.0: ekran powitalny przy starcie\n\nNowości:\n- po włączeniu panel pokazuje przez 4 s ekran powitalny: pulsująca ramka,\n  świecąca ikona domku i napis „iSter electronics” na czarnym tle\n- to ten sam projekt graficzny co w Piecyk_PID, przeskalowany 2,5x\n  z 320x480 na 800x1280 (koło 250 px, poświata 300-400 px, ikona 96 px,\n  napis 48 px); kolory, czasy i sposób pulsowania bez zmian\n- w trakcie powitania dotyk jest ignorowany, a wygaszanie ekranu wstrzymane\n- działa w obu orientacjach ekranu (pionowej i poziomej)",
+  "notes": "v1.7.1: ekran powitalny przy starcie i wyłączaniu, odporniejsza aktualizacja\n\nEkran powitalny:\n- pokazuje się teraz także przy wyłączaniu: restart z ustawień, restart po\n  aktualizacji OTA i restart z panelu WWW zaczynają się od tego samego\n  ekranu, zamiast gasnąć na niebiesko\n- podczas startu animacja była szarpana, bo uruchamianie ESP32-C6 po SDIO\n  blokuje procesor na ponad sekundę; radio startuje teraz dopiero po\n  zniknięciu powitania, więc animacja jest płynna\n- działa w obu orientacjach ekranu\n\nWyłączanie i restart:\n- przed resetem wyświetlacz jest gaszony i zasilanie toru MIPI zwalniane;\n  wcześniej kontroler obrazu nagle tracił zasilanie i malował niebieski ekran\n- brak zasilania toru MIPI po restarcie programowym nie przerywa już startu\n  firmware: panel loguje ostrzeżenie i próbuje dalej, zamiast wpadać\n  w pętlę restartów z ciemnym ekranem (wtedy nie dawało się zrobić nic,\n  nawet zaktualizować panelu)\n\nAktualizacja OTA:\n- przerwane pobieranie jest wznawiane od miejsca zatrzymania (żądanie Range),\n  do czterech prób; wcześniej jedno zacięcie unieważniało całe pobieranie\n  i trzeba było zaczynać od zera",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.7.0.bin",
-      "size": 2574928,
-      "sha256": "7111e856b3b668882520bcf0f7be6275e9a6b1912dd03cae533ed87be8f4c952"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.7.1.bin",
+      "size": 2576176,
+      "sha256": "d46076826fbf5d11a903b882808083c99bcfaef505e7d59a6fd6c5d586931e40"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.7.0.bin",
-      "size": 2577664,
-      "sha256": "cdeea3d0ad6fb76604ad152c63e847ec5d8b40c943f3de476a94d0eaafa0544c"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.7.1.bin",
+      "size": 2578896,
+      "sha256": "ce7d2a7c77a729f208408307c5867a5676245d0cb3f9240181661472e015fc87"
     }
   }
 }

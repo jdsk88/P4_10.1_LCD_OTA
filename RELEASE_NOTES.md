@@ -1,25 +1,23 @@
-1.6.0: panel WWW - pełna funkcjonalność w przeglądarce
+v1.7.1: ekran powitalny przy starcie i wyłączaniu, odporniejsza aktualizacja
 
-Nowości:
-- wbudowany serwer WWW: strona pod http://<adres-panelu>/ (albo
-  http://jc8012-panel.local/), logowanie: admin + hasło hotspotu
-- zakładki: status systemu, urządzenia ESP-NOW (parowanie, sterowanie
-  oczyszczaczem, pomiary, wykresy z historii, zmiana nazwy, ping, usuwanie),
-  poczta (skrzynka, odczyt, odpowiedź), ustawienia wyświetlacza i języka,
-  konto Gmail, sieć Wi-Fi (skanowanie, statyczne IP, hotspot) oraz
-  aktualizacje OTA, restart i reset fabryczny
-- REST API pod /api/* (JSON, HTTP Basic auth)
-- strona jest wbudowana w firmware, więc zawsze pasuje do działającej
-  wersji i aktualizuje się razem z nią przez OTA
+Ekran powitalny:
+- pokazuje się teraz także przy wyłączaniu: restart z ustawień, restart po
+  aktualizacji OTA i restart z panelu WWW zaczynają się od tego samego
+  ekranu, zamiast gasnąć na niebiesko
+- podczas startu animacja była szarpana, bo uruchamianie ESP32-C6 po SDIO
+  blokuje procesor na ponad sekundę; radio startuje teraz dopiero po
+  zniknięciu powitania, więc animacja jest płynna
+- działa w obu orientacjach ekranu
 
+Wyłączanie i restart:
+- przed resetem wyświetlacz jest gaszony i zasilanie toru MIPI zwalniane;
+  wcześniej kontroler obrazu nagle tracił zasilanie i malował niebieski ekran
+- brak zasilania toru MIPI po restarcie programowym nie przerywa już startu
+  firmware: panel loguje ostrzeżenie i próbuje dalej, zamiast wpadać
+  w pętlę restartów z ciemnym ekranem (wtedy nie dawało się zrobić nic,
+  nawet zaktualizować panelu)
 
-v1.7.0: ekran powitalny przy starcie
-
-Nowości:
-- po włączeniu panel pokazuje przez 4 s ekran powitalny: pulsująca ramka,
-  świecąca ikona domku i napis „iSter electronics” na czarnym tle
-- to ten sam projekt graficzny co w Piecyk_PID, przeskalowany 2,5x
-  z 320x480 na 800x1280 (koło 250 px, poświata 300-400 px, ikona 96 px,
-  napis 48 px); kolory, czasy i sposób pulsowania bez zmian
-- w trakcie powitania dotyk jest ignorowany, a wygaszanie ekranu wstrzymane
-- działa w obu orientacjach ekranu (pionowej i poziomej)
+Aktualizacja OTA:
+- przerwane pobieranie jest wznawiane od miejsca zatrzymania (żądanie Range),
+  do czterech prób; wcześniej jedno zacięcie unieważniało całe pobieranie
+  i trzeba było zaczynać od zera
