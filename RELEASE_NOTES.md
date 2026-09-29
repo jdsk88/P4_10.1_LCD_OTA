@@ -1,21 +1,23 @@
-v1.7.2: ekran budzi się po aktualizacji
+v1.7.3: powrót do sprawdzonej sekwencji startu z 1.6.0
 
-Od wersji 1.7.0 po aktualizacji OTA ekran potrafił nie zapalić się wcale -
-pomagało dopiero odcięcie zasilania. Przyczyna leżała w kolejności startu,
-którą wprowadził ekran powitalny, a 1.7.1 dołożyła do tego drugi błąd.
-Oba są naprawione.
+Wersje 1.7.0-1.7.2 przestawiały kolejność uruchamiania wokół ekranu
+powitalnego i każda z nich psuła wybudzanie po aktualizacji OTA w inny
+sposób. Ta wersja wraca dokładnie do sekwencji startu z 1.6.0 - ostatniej,
+która po aktualizacji wstawała sama - a powitanie dokłada w jedynym
+miejscu, w którym nie może zaszkodzić.
 
-Poprawki:
-- podświetlenie zapala się zaraz po uruchomieniu wyświetlacza, zanim
-  cokolwiek zostanie narysowane. Wcześniej czekało na pierwszą klatkę, więc
-  gdy jej rysowanie się nie powiodło, ekran zostawał czarny na zawsze
-- nieudana alokacja pamięci w LVGL nie zatrzymuje już panelu w nieskończonej
-  pętli, tylko go restartuje; przy powtarzalnej awarii bootloader wróci do
-  poprzedniej wersji, zamiast zostawić martwe urządzenie
-- ekran powitalny nie rysuje już rozmytego cienia pod ikoną - to była
-  największa pojedyncza alokacja przy starcie, a świecąca poświata i tak
-  daje ten sam efekt
-- cofnięte zwalnianie zasilania toru MIPI przed restartem, które dodałem
-  w 1.7.1: odcinało napięcie od układu obrazu dokładnie w chwili resetu
-- nieudane uruchomienie panelu jest ponawiane trzy razy, zanim start
-  firmware zostanie przerwany
+Zmiany:
+- start identyczny jak w 1.6.0: wyświetlacz, interfejs, pierwsza klatka,
+  podświetlenie, dopiero potem ekran powitalny. Cokolwiek by się z nim
+  działo, panel jest już zapalony i narysowany
+- radio i usługi startują od razu w rozruchu, jak w 1.6.0 (bez odkładania,
+  które wprowadziła 1.7.1)
+- ekran pożegnalny przy restarcie zapala podświetlenie, więc jest widoczny
+  także po aktualizacji, kiedy ekran był wygaszony na czas zapisu
+- reszta zabezpieczeń z 1.7.2 zostaje: restart zamiast zawieszenia przy
+  braku pamięci, ponawianie startu panelu, wznawianie pobierania
+
+Weryfikacja z oficjalnych źródeł ESP-IDF 5.5.5: restart programowy nie
+resetuje hosta MIPI-DSI, ale sterownik resetuje jego rejestry przy
+tworzeniu magistrali - ponowna inicjalizacja po restarcie jest wspierana
+i żadne dodatkowe zabiegi przy wyłączaniu nie są potrzebne.

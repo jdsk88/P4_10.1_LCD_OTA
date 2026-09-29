@@ -1,17 +1,17 @@
 {
-  "version": "1.7.2",
+  "version": "1.7.3",
   "date": "2026-09-29",
-  "notes": "v1.7.2: ekran budzi się po aktualizacji\n\nOd wersji 1.7.0 po aktualizacji OTA ekran potrafił nie zapalić się wcale -\npomagało dopiero odcięcie zasilania. Przyczyna leżała w kolejności startu,\nktórą wprowadził ekran powitalny, a 1.7.1 dołożyła do tego drugi błąd.\nOba są naprawione.\n\nPoprawki:\n- podświetlenie zapala się zaraz po uruchomieniu wyświetlacza, zanim\n  cokolwiek zostanie narysowane. Wcześniej czekało na pierwszą klatkę, więc\n  gdy jej rysowanie się nie powiodło, ekran zostawał czarny na zawsze\n- nieudana alokacja pamięci w LVGL nie zatrzymuje już panelu w nieskończonej\n  pętli, tylko go restartuje; przy powtarzalnej awarii bootloader wróci do\n  poprzedniej wersji, zamiast zostawić martwe urządzenie\n- ekran powitalny nie rysuje już rozmytego cienia pod ikoną - to była\n  największa pojedyncza alokacja przy starcie, a świecąca poświata i tak\n  daje ten sam efekt\n- cofnięte zwalnianie zasilania toru MIPI przed restartem, które dodałem\n  w 1.7.1: odcinało napięcie od układu obrazu dokładnie w chwili resetu\n- nieudane uruchomienie panelu jest ponawiane trzy razy, zanim start\n  firmware zostanie przerwany",
+  "notes": "v1.7.3: powrót do sprawdzonej sekwencji startu z 1.6.0\n\nWersje 1.7.0-1.7.2 przestawiały kolejność uruchamiania wokół ekranu\npowitalnego i każda z nich psuła wybudzanie po aktualizacji OTA w inny\nsposób. Ta wersja wraca dokładnie do sekwencji startu z 1.6.0 - ostatniej,\nktóra po aktualizacji wstawała sama - a powitanie dokłada w jedynym\nmiejscu, w którym nie może zaszkodzić.\n\nZmiany:\n- start identyczny jak w 1.6.0: wyświetlacz, interfejs, pierwsza klatka,\n  podświetlenie, dopiero potem ekran powitalny. Cokolwiek by się z nim\n  działo, panel jest już zapalony i narysowany\n- radio i usługi startują od razu w rozruchu, jak w 1.6.0 (bez odkładania,\n  które wprowadziła 1.7.1)\n- ekran pożegnalny przy restarcie zapala podświetlenie, więc jest widoczny\n  także po aktualizacji, kiedy ekran był wygaszony na czas zapisu\n- reszta zabezpieczeń z 1.7.2 zostaje: restart zamiast zawieszenia przy\n  braku pamięci, ponawianie startu panelu, wznawianie pobierania\n\nWeryfikacja z oficjalnych źródeł ESP-IDF 5.5.5: restart programowy nie\nresetuje hosta MIPI-DSI, ale sterownik resetuje jego rejestry przy\ntworzeniu magistrali - ponowna inicjalizacja po restarcie jest wspierana\ni żadne dodatkowe zabiegi przy wyłączaniu nie są potrzebne.",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.7.2.bin",
-      "size": 2576880,
-      "sha256": "27acfa9589f8100887d2d5ba7331d53486e74f4edb8b94ae134c9858fc2cb8d5"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.7.3.bin",
+      "size": 2576864,
+      "sha256": "db3f5a19bdf8179ad73a7782290a6b1a016b7e8b3b2e453bfd17f8a83399ed05"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.7.2.bin",
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.7.3.bin",
       "size": 2579600,
-      "sha256": "a423b0b49a8aeed63c00f65e51f99db5796034dc191f445e4cb72dd0b4244892"
+      "sha256": "ebc93ab9ebf76e3a08a670c0e11c9d23a4403b24ff7765ef904e2fd959280694"
     }
   }
 }
