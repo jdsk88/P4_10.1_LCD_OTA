@@ -1,23 +1,21 @@
-v1.7.1: ekran powitalny przy starcie i wyłączaniu, odporniejsza aktualizacja
+v1.7.2: ekran budzi się po aktualizacji
 
-Ekran powitalny:
-- pokazuje się teraz także przy wyłączaniu: restart z ustawień, restart po
-  aktualizacji OTA i restart z panelu WWW zaczynają się od tego samego
-  ekranu, zamiast gasnąć na niebiesko
-- podczas startu animacja była szarpana, bo uruchamianie ESP32-C6 po SDIO
-  blokuje procesor na ponad sekundę; radio startuje teraz dopiero po
-  zniknięciu powitania, więc animacja jest płynna
-- działa w obu orientacjach ekranu
+Od wersji 1.7.0 po aktualizacji OTA ekran potrafił nie zapalić się wcale -
+pomagało dopiero odcięcie zasilania. Przyczyna leżała w kolejności startu,
+którą wprowadził ekran powitalny, a 1.7.1 dołożyła do tego drugi błąd.
+Oba są naprawione.
 
-Wyłączanie i restart:
-- przed resetem wyświetlacz jest gaszony i zasilanie toru MIPI zwalniane;
-  wcześniej kontroler obrazu nagle tracił zasilanie i malował niebieski ekran
-- brak zasilania toru MIPI po restarcie programowym nie przerywa już startu
-  firmware: panel loguje ostrzeżenie i próbuje dalej, zamiast wpadać
-  w pętlę restartów z ciemnym ekranem (wtedy nie dawało się zrobić nic,
-  nawet zaktualizować panelu)
-
-Aktualizacja OTA:
-- przerwane pobieranie jest wznawiane od miejsca zatrzymania (żądanie Range),
-  do czterech prób; wcześniej jedno zacięcie unieważniało całe pobieranie
-  i trzeba było zaczynać od zera
+Poprawki:
+- podświetlenie zapala się zaraz po uruchomieniu wyświetlacza, zanim
+  cokolwiek zostanie narysowane. Wcześniej czekało na pierwszą klatkę, więc
+  gdy jej rysowanie się nie powiodło, ekran zostawał czarny na zawsze
+- nieudana alokacja pamięci w LVGL nie zatrzymuje już panelu w nieskończonej
+  pętli, tylko go restartuje; przy powtarzalnej awarii bootloader wróci do
+  poprzedniej wersji, zamiast zostawić martwe urządzenie
+- ekran powitalny nie rysuje już rozmytego cienia pod ikoną - to była
+  największa pojedyncza alokacja przy starcie, a świecąca poświata i tak
+  daje ten sam efekt
+- cofnięte zwalnianie zasilania toru MIPI przed restartem, które dodałem
+  w 1.7.1: odcinało napięcie od układu obrazu dokładnie w chwili resetu
+- nieudane uruchomienie panelu jest ponawiane trzy razy, zanim start
+  firmware zostanie przerwany

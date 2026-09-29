@@ -1,17 +1,17 @@
 {
-  "version": "1.7.1",
+  "version": "1.7.2",
   "date": "2026-09-29",
-  "notes": "v1.7.1: ekran powitalny przy starcie i wyłączaniu, odporniejsza aktualizacja\n\nEkran powitalny:\n- pokazuje się teraz także przy wyłączaniu: restart z ustawień, restart po\n  aktualizacji OTA i restart z panelu WWW zaczynają się od tego samego\n  ekranu, zamiast gasnąć na niebiesko\n- podczas startu animacja była szarpana, bo uruchamianie ESP32-C6 po SDIO\n  blokuje procesor na ponad sekundę; radio startuje teraz dopiero po\n  zniknięciu powitania, więc animacja jest płynna\n- działa w obu orientacjach ekranu\n\nWyłączanie i restart:\n- przed resetem wyświetlacz jest gaszony i zasilanie toru MIPI zwalniane;\n  wcześniej kontroler obrazu nagle tracił zasilanie i malował niebieski ekran\n- brak zasilania toru MIPI po restarcie programowym nie przerywa już startu\n  firmware: panel loguje ostrzeżenie i próbuje dalej, zamiast wpadać\n  w pętlę restartów z ciemnym ekranem (wtedy nie dawało się zrobić nic,\n  nawet zaktualizować panelu)\n\nAktualizacja OTA:\n- przerwane pobieranie jest wznawiane od miejsca zatrzymania (żądanie Range),\n  do czterech prób; wcześniej jedno zacięcie unieważniało całe pobieranie\n  i trzeba było zaczynać od zera",
+  "notes": "v1.7.2: ekran budzi się po aktualizacji\n\nOd wersji 1.7.0 po aktualizacji OTA ekran potrafił nie zapalić się wcale -\npomagało dopiero odcięcie zasilania. Przyczyna leżała w kolejności startu,\nktórą wprowadził ekran powitalny, a 1.7.1 dołożyła do tego drugi błąd.\nOba są naprawione.\n\nPoprawki:\n- podświetlenie zapala się zaraz po uruchomieniu wyświetlacza, zanim\n  cokolwiek zostanie narysowane. Wcześniej czekało na pierwszą klatkę, więc\n  gdy jej rysowanie się nie powiodło, ekran zostawał czarny na zawsze\n- nieudana alokacja pamięci w LVGL nie zatrzymuje już panelu w nieskończonej\n  pętli, tylko go restartuje; przy powtarzalnej awarii bootloader wróci do\n  poprzedniej wersji, zamiast zostawić martwe urządzenie\n- ekran powitalny nie rysuje już rozmytego cienia pod ikoną - to była\n  największa pojedyncza alokacja przy starcie, a świecąca poświata i tak\n  daje ten sam efekt\n- cofnięte zwalnianie zasilania toru MIPI przed restartem, które dodałem\n  w 1.7.1: odcinało napięcie od układu obrazu dokładnie w chwili resetu\n- nieudane uruchomienie panelu jest ponawiane trzy razy, zanim start\n  firmware zostanie przerwany",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.7.1.bin",
-      "size": 2576176,
-      "sha256": "d46076826fbf5d11a903b882808083c99bcfaef505e7d59a6fd6c5d586931e40"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.7.2.bin",
+      "size": 2576880,
+      "sha256": "27acfa9589f8100887d2d5ba7331d53486e74f4edb8b94ae134c9858fc2cb8d5"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.7.1.bin",
-      "size": 2578896,
-      "sha256": "ce7d2a7c77a729f208408307c5867a5676245d0cb3f9240181661472e015fc87"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.7.2.bin",
+      "size": 2579600,
+      "sha256": "a423b0b49a8aeed63c00f65e51f99db5796034dc191f445e4cb72dd0b4244892"
     }
   }
 }
