@@ -1,17 +1,17 @@
 {
-  "version": "1.5.0",
-  "date": "2026-09-28",
-  "notes": "v1.5.0: motywy kolorystyczne i naprawa przycisku wentylatora\n\nNowości:\n- Ustawienia -> Wyświetlacz: wybór motywu kolorów obok trybu ciemny/jasny.\n  Sześć schematów: Domyślny, Zielony, Niebieski, Fioletowy, Lekko niebieski\n  i Lekko biały - każdy z osobną paletą ciemną i jasną, więc łączy się\n  z przełącznikiem trybu. Wybiera się je kolorowymi kółkami, zmiana działa\n  natychmiast. Odcienie dobrane pod RGB565, żeby nic nie prążkowało.\n\nPoprawki:\n- przycisk zasilania oczyszczacza reaguje natychmiast po dotknięciu;\n  wcześniej odświeżał się dopiero po pół sekundy, a szybkie drugie\n  stuknięcie wysyłało tę samą komendę zamiast przełączyć z powrotem -\n  przycisk sprawiał wrażenie zawieszonego. Wybór trybu pracy także\n  podświetla się od razu.",
+  "version": "1.7.0",
+  "date": "2026-09-29",
+  "notes": "1.6.0: panel WWW - pełna funkcjonalność w przeglądarce\n\nNowości:\n- wbudowany serwer WWW: strona pod http://<adres-panelu>/ (albo\n  http://jc8012-panel.local/), logowanie: admin + hasło hotspotu\n- zakładki: status systemu, urządzenia ESP-NOW (parowanie, sterowanie\n  oczyszczaczem, pomiary, wykresy z historii, zmiana nazwy, ping, usuwanie),\n  poczta (skrzynka, odczyt, odpowiedź), ustawienia wyświetlacza i języka,\n  konto Gmail, sieć Wi-Fi (skanowanie, statyczne IP, hotspot) oraz\n  aktualizacje OTA, restart i reset fabryczny\n- REST API pod /api/* (JSON, HTTP Basic auth)\n- strona jest wbudowana w firmware, więc zawsze pasuje do działającej\n  wersji i aktualizuje się razem z nią przez OTA\n\n\nv1.7.0: ekran powitalny przy starcie\n\nNowości:\n- po włączeniu panel pokazuje przez 4 s ekran powitalny: pulsująca ramka,\n  świecąca ikona domku i napis „iSter electronics” na czarnym tle\n- to ten sam projekt graficzny co w Piecyk_PID, przeskalowany 2,5x\n  z 320x480 na 800x1280 (koło 250 px, poświata 300-400 px, ikona 96 px,\n  napis 48 px); kolory, czasy i sposób pulsowania bez zmian\n- w trakcie powitania dotyk jest ignorowany, a wygaszanie ekranu wstrzymane\n- działa w obu orientacjach ekranu (pionowej i poziomej)",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.5.0.bin",
-      "size": 2452960,
-      "sha256": "61dcf33871d08883e7bc3e9c40263ae994bcab3cc53ba438ec65bc747c4aec34"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.7.0.bin",
+      "size": 2574928,
+      "sha256": "7111e856b3b668882520bcf0f7be6275e9a6b1912dd03cae533ed87be8f4c952"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.5.0.bin",
-      "size": 2455664,
-      "sha256": "2468f517d5e1179728793b236c561269d02a92683906eeba56887be077ca9063"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.7.0.bin",
+      "size": 2577664,
+      "sha256": "cdeea3d0ad6fb76604ad152c63e847ec5d8b40c943f3de476a94d0eaafa0544c"
     }
   }
 }
