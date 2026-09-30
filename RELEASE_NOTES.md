@@ -1,23 +1,15 @@
-v1.7.3: powrót do sprawdzonej sekwencji startu z 1.6.0
+v1.8.0: obsługa wideodomofonu (ESP-NOW)
 
-Wersje 1.7.0-1.7.2 przestawiały kolejność uruchamiania wokół ekranu
-powitalnego i każda z nich psuła wybudzanie po aktualizacji OTA w inny
-sposób. Ta wersja wraca dokładnie do sekwencji startu z 1.6.0 - ostatniej,
-która po aktualizacji wstawała sama - a powitanie dokłada w jedynym
-miejscu, w którym nie może zaszkodzić.
-
-Zmiany:
-- start identyczny jak w 1.6.0: wyświetlacz, interfejs, pierwsza klatka,
-  podświetlenie, dopiero potem ekran powitalny. Cokolwiek by się z nim
-  działo, panel jest już zapalony i narysowany
-- radio i usługi startują od razu w rozruchu, jak w 1.6.0 (bez odkładania,
-  które wprowadziła 1.7.1)
-- ekran pożegnalny przy restarcie zapala podświetlenie, więc jest widoczny
-  także po aktualizacji, kiedy ekran był wygaszony na czas zapisu
-- reszta zabezpieczeń z 1.7.2 zostaje: restart zamiast zawieszenia przy
-  braku pamięci, ponawianie startu panelu, wznawianie pobierania
-
-Weryfikacja z oficjalnych źródeł ESP-IDF 5.5.5: restart programowy nie
-resetuje hosta MIPI-DSI, ale sterownik resetuje jego rejestry przy
-tworzeniu magistrali - ponowna inicjalizacja po restarcie jest wspierana
-i żadne dodatkowe zabiegi przy wyłączaniu nie są potrzebne.
+Nowości:
+- nowy widżet urządzenia typu „doorbell”: przycisk otwarcia drzwi (komenda
+  „open”), stan rygla, licznik dzwonków z toastem przy nowym dzwonku
+- wiersz WiFi urządzenia: połączone z siłą sygnału albo ostrzeżenie
+  z przyciskiem „Połącz z WiFi” — z dotyku podpowiada SSID sieci panelu,
+  pyta o hasło i wysyła komendę „wifi” szyfrowanym łączem ESP-NOW;
+  panel WWW robi to samo przez istniejące API
+- lista urządzeń grupowana po kategorii (audio-wideo, czujniki, inne);
+  nagłówki pojawiają się dopiero, gdy kategorii jest więcej niż jedna
+- device_meta zna typ „doorbell”: ikona dzwonka, tłumaczenia, etykiety
+  komend open/wifi; stan łącza (wifi, wifi_rssi, lock_open, ring_age)
+  nie dubluje się w pomiarach
+- rejestr widżetów przyjmuje listę komend obsługiwanych przez widżet

@@ -1,17 +1,17 @@
 {
-  "version": "1.7.3",
-  "date": "2026-09-29",
-  "notes": "v1.7.3: powrót do sprawdzonej sekwencji startu z 1.6.0\n\nWersje 1.7.0-1.7.2 przestawiały kolejność uruchamiania wokół ekranu\npowitalnego i każda z nich psuła wybudzanie po aktualizacji OTA w inny\nsposób. Ta wersja wraca dokładnie do sekwencji startu z 1.6.0 - ostatniej,\nktóra po aktualizacji wstawała sama - a powitanie dokłada w jedynym\nmiejscu, w którym nie może zaszkodzić.\n\nZmiany:\n- start identyczny jak w 1.6.0: wyświetlacz, interfejs, pierwsza klatka,\n  podświetlenie, dopiero potem ekran powitalny. Cokolwiek by się z nim\n  działo, panel jest już zapalony i narysowany\n- radio i usługi startują od razu w rozruchu, jak w 1.6.0 (bez odkładania,\n  które wprowadziła 1.7.1)\n- ekran pożegnalny przy restarcie zapala podświetlenie, więc jest widoczny\n  także po aktualizacji, kiedy ekran był wygaszony na czas zapisu\n- reszta zabezpieczeń z 1.7.2 zostaje: restart zamiast zawieszenia przy\n  braku pamięci, ponawianie startu panelu, wznawianie pobierania\n\nWeryfikacja z oficjalnych źródeł ESP-IDF 5.5.5: restart programowy nie\nresetuje hosta MIPI-DSI, ale sterownik resetuje jego rejestry przy\ntworzeniu magistrali - ponowna inicjalizacja po restarcie jest wspierana\ni żadne dodatkowe zabiegi przy wyłączaniu nie są potrzebne.",
+  "version": "1.8.0",
+  "date": "2026-09-30",
+  "notes": "v1.8.0: obsługa wideodomofonu (ESP-NOW)\n\nNowości:\n- nowy widżet urządzenia typu „doorbell”: przycisk otwarcia drzwi (komenda\n  „open”), stan rygla, licznik dzwonków z toastem przy nowym dzwonku\n- wiersz WiFi urządzenia: połączone z siłą sygnału albo ostrzeżenie\n  z przyciskiem „Połącz z WiFi” — z dotyku podpowiada SSID sieci panelu,\n  pyta o hasło i wysyła komendę „wifi” szyfrowanym łączem ESP-NOW;\n  panel WWW robi to samo przez istniejące API\n- lista urządzeń grupowana po kategorii (audio-wideo, czujniki, inne);\n  nagłówki pojawiają się dopiero, gdy kategorii jest więcej niż jedna\n- device_meta zna typ „doorbell”: ikona dzwonka, tłumaczenia, etykiety\n  komend open/wifi; stan łącza (wifi, wifi_rssi, lock_open, ring_age)\n  nie dubluje się w pomiarach\n- rejestr widżetów przyjmuje listę komend obsługiwanych przez widżet",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.7.3.bin",
-      "size": 2576864,
-      "sha256": "db3f5a19bdf8179ad73a7782290a6b1a016b7e8b3b2e453bfd17f8a83399ed05"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.8.0.bin",
+      "size": 2582704,
+      "sha256": "02d618705f069c80083c36b4968b874b49e8d433ae5ecbfba8b07df2eea3dadd"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.7.3.bin",
-      "size": 2579600,
-      "sha256": "ebc93ab9ebf76e3a08a670c0e11c9d23a4403b24ff7765ef904e2fd959280694"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.8.0.bin",
+      "size": 2585488,
+      "sha256": "9ac4d8fd631aa2f992371026ffcf2fd496531dd134c331f045165bc6f8bffba7"
     }
   }
 }
