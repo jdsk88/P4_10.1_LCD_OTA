@@ -1,17 +1,17 @@
 {
-  "version": "1.8.0",
+  "version": "1.9.3",
   "date": "2026-09-30",
-  "notes": "v1.8.0: obsługa wideodomofonu (ESP-NOW)\n\nNowości:\n- nowy widżet urządzenia typu „doorbell”: przycisk otwarcia drzwi (komenda\n  „open”), stan rygla, licznik dzwonków z toastem przy nowym dzwonku\n- wiersz WiFi urządzenia: połączone z siłą sygnału albo ostrzeżenie\n  z przyciskiem „Połącz z WiFi” — z dotyku podpowiada SSID sieci panelu,\n  pyta o hasło i wysyła komendę „wifi” szyfrowanym łączem ESP-NOW;\n  panel WWW robi to samo przez istniejące API\n- lista urządzeń grupowana po kategorii (audio-wideo, czujniki, inne);\n  nagłówki pojawiają się dopiero, gdy kategorii jest więcej niż jedna\n- device_meta zna typ „doorbell”: ikona dzwonka, tłumaczenia, etykiety\n  komend open/wifi; stan łącza (wifi, wifi_rssi, lock_open, ring_age)\n  nie dubluje się w pomiarach\n- rejestr widżetów przyjmuje listę komend obsługiwanych przez widżet",
+  "notes": "v1.9.2 call handle from door bell",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.8.0.bin",
-      "size": 2582704,
-      "sha256": "02d618705f069c80083c36b4968b874b49e8d433ae5ecbfba8b07df2eea3dadd"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.9.3.bin",
+      "size": 2716576,
+      "sha256": "69e5b2227b0c6e259dad04e8427e29db7ccf1028c85ae25ebee590bc836a948d"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.8.0.bin",
-      "size": 2585488,
-      "sha256": "9ac4d8fd631aa2f992371026ffcf2fd496531dd134c331f045165bc6f8bffba7"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.9.3.bin",
+      "size": 2719088,
+      "sha256": "120197062505f3ecebe993579030ae717cc54b7c3167f74926e53195cc65014d"
     }
   }
 }
