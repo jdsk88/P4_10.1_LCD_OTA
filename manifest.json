@@ -1,17 +1,17 @@
 {
-  "version": "1.9.3",
-  "date": "2026-09-30",
-  "notes": "v1.9.2 call handle from door bell",
+  "version": "1.13.1",
+  "date": "2026-10-02",
+  "notes": "v1.13.1: kolorowe ikony pogodowe\n\nNowości (v1.13.0):\n- Aplikacja pogodowa: kafelek na Starcie i pełnoekranowa prognoza (Open-Meteo) - godzinowa i 7-dniowa, lokalizacja z sieci (IP) lub ręczna z wyszukiwaniem miejscowości\n\nPoprawki:\n- Ikony pogody w kolorze (zestaw Meteocons) zamiast jednobarwnych, niebieskich glifów: żółte słońce, białe chmury, niebieski deszcz, żółty piorun",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.9.3.bin",
-      "size": 2716576,
-      "sha256": "69e5b2227b0c6e259dad04e8427e29db7ccf1028c85ae25ebee590bc836a948d"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.13.1.bin",
+      "size": 3124608,
+      "sha256": "01f32b696c3a640fdec1d0ea339d153f2dcd421b65c165665bed9a6a1298bbf1"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.9.3.bin",
-      "size": 2719088,
-      "sha256": "120197062505f3ecebe993579030ae717cc54b7c3167f74926e53195cc65014d"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.13.1.bin",
+      "size": 3127136,
+      "sha256": "b7edbe0c96afdd91a50451b110a09d76c747d3dae38ecb04a4b8f2f2e565fea7"
     }
   }
 }
