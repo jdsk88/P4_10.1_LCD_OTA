@@ -1,17 +1,17 @@
 {
-  "version": "1.13.1",
-  "date": "2026-10-02",
-  "notes": "v1.13.1: kolorowe ikony pogodowe\n\nNowości (v1.13.0):\n- Aplikacja pogodowa: kafelek na Starcie i pełnoekranowa prognoza (Open-Meteo) - godzinowa i 7-dniowa, lokalizacja z sieci (IP) lub ręczna z wyszukiwaniem miejscowości\n\nPoprawki:\n- Ikony pogody w kolorze (zestaw Meteocons) zamiast jednobarwnych, niebieskich glifów: żółte słońce, białe chmury, niebieski deszcz, żółty piorun",
+  "version": "1.17.0",
+  "date": "2026-10-11",
+  "notes": "v1.17.0: amplituner Yamaha w panelu, na WWW i w aplikacji; radio FM; zrzut ekranu panelu\n\nNowości:\n- Amplituner Yamaha MusicCast (RX-V4A) sterowany bezpośrednio z panelu po sieci\n  domowej (Yamaha Extended Control po HTTP, bez chmury). Ustawienia → Audio:\n  adres i pokój; amplituner staje się urządzeniem w tym pokoju z kafelkiem na\n  Start i w pokoju, a „Wychodzę” i „Wyłącz pokój” przełączają go w czuwanie.\n- Widok amplitunera w stylu Crestron Home Media: kafelki źródeł z ikonami\n  (HDMI, TV, AUDIO1–5, Bluetooth, tuner, USB, AirPlay, Spotify, radio\n  internetowe; przytrzymanie nadaje własną nazwę, np. CD lub AUX), suwak\n  głośności z wyciszeniem, osobny poziom startowy każdego źródła, karta „teraz\n  gra” z przewijaniem, powtarzaniem i presetami, a dalej zakładki Dźwięk\n  (program, dekoder surround, bas/soprany/dialog/subwoofer, Pure Direct,\n  Enhancer, Extra Bass, Adaptive DRC), Wyjścia (głośniki strefy B z własną\n  głośnością, HDMI OUT), Radio, Pilot (kursor i menu ekranowe, sceny, timer\n  snu) i Więcej (Bluetooth, wyświetlacz, łącze MusicCast, opóźnienie audio).\n  W poziomie źródła zajmują lewą kolumnę.\n- Radio FM: lista stacji z nazwami i logotypami na panelu. Skanowanie pasma\n  przez amplituner z nazwami z RDS, import jego presetów, dodawanie ręczne po\n  częstotliwości; logotypy po nazwie stacji (radio-browser.info + miniatura\n  JPEG przez images.weserv.nl). Wymaga anteny FM w amplitunerze.\n- Całe API amplitunera przez panel: GET/POST /api/audio (ponad 30 akcji),\n  /api/audio/yxc (dowolne wywołanie YXC, także zdalnie przez relay),\n  /api/radio, /api/radio/logo. Strona WWW ma zakładkę Audio z konsolą API.\n- GET /api/screen.bmp: zrzut tego, co jest na ekranie panelu.\n\nPoprawki:\n- Klimatyzacja: akcje „Wychodzę”/„Wyłącz pokój” obejmują amplituner.\n- Odczyt list z amplitunera (wejścia, programy, presety) był pusty: parser\n  z filtrem odrzucał odpowiedź bez pola response_code, a strumień TCP był\n  czytany po kawałkach. Oba błędy usunięte.",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.13.1.bin",
-      "size": 3124608,
-      "sha256": "01f32b696c3a640fdec1d0ea339d153f2dcd421b65c165665bed9a6a1298bbf1"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.17.0.bin",
+      "size": 4255440,
+      "sha256": "98a1d0965b040e5be6c1284fc0b9133d352a6e983eb72e0cfaa23d27c48502d9"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.13.1.bin",
-      "size": 3127136,
-      "sha256": "b7edbe0c96afdd91a50451b110a09d76c747d3dae38ecb04a4b8f2f2e565fea7"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.17.0.bin",
+      "size": 4257824,
+      "sha256": "fe3b481e412715502e465dd3eb7f66e7becb11413f7eb48d2756a9ec2ff0fa3b"
     }
   }
 }
