@@ -1,17 +1,17 @@
 {
-  "version": "1.17.1",
+  "version": "1.17.2",
   "date": "2026-10-11",
-  "notes": "v1.17.1: aktualizacja OTA znów działa; wybór dostawcy klimatyzacji: ConnectLife, Smart Life (chmura) lub Smart Life (lokalnie)\n\nPoprawki:\n- Aktualizacja OTA nie zawiesza się już na 0–5 % i nie zrywa Wi-Fi: obraz jest\n  pobierany w porcjach po 32 KB na jednym połączeniu, więc pamięć wewnętrzna\n  panelu nie kończy się w trakcie pobierania. Na czas instalacji amplituner,\n  falownik i kamera czekają, a przy zbyt małej ilości wolnej pamięci panel\n  prosi o restart zamiast tracić sieć.\n\nNowości:\n- Ustawienia → Klimatyzacja → Dostawca (API): obok ConnectLife można wybrać\n  Smart Life / Tuya Smart – przez chmurę (klucze projektu z iot.tuya.com,\n  centrum danych) albo lokalnie po sieci domowej (protokół Tuya 3.3/3.4/3.5,\n  bez żadnej chmury; wystarczy id urządzenia i klucz lokalny z konta aplikacji,\n  które wypisuje tools/smartlife/local_keys.sh po zeskanowaniu kodu QR\n  w aplikacji Smart Life).\n- Jednostki Smart Life konfiguruje się na stronie WWW panelu i w aplikacji\n  (lista jednostek, klucze, pokój, numery DP dla nietypowych produktów);\n  panel pokazuje stan i liczbę dostępnych jednostek.\n- Przyciski, których dany klimatyzator nie ma (np. Turbo, Cichy), są ukrywane\n  na panelu, w WWW i w aplikacji.\n- Opis obu wariantów Smart Life w docs/smartlife.md.",
+  "notes": "v.1.17.2 OTA FIX - HI NANO FOR CF - SMART LIFE SUPPORT",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.17.1.bin",
-      "size": 4337568,
-      "sha256": "7572de10c7bb7d3a4de6354f52b9ea0cf28b5faa248c5313090a6faa0f28b34c"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.17.2.bin",
+      "size": 4340064,
+      "sha256": "bf94bd7763fcd0010b08c1e17a72796e2c094a796639754e54b4d164ea5bd11a"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.17.1.bin",
-      "size": 4339936,
-      "sha256": "ff3c49e3d8ab9abbe99aacc47586d55e6610de2f5711b677894fda986226ede7"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.17.2.bin",
+      "size": 4342432,
+      "sha256": "2086a46cff3fcc20139975e264e1c6cd81503f3c3286ee21479aec68b43a8895"
     }
   }
 }
