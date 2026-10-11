@@ -1,17 +1,17 @@
 {
-  "version": "1.17.2",
+  "version": "1.17.3",
   "date": "2026-10-11",
-  "notes": "v.1.17.2 OTA FIX - HI NANO FOR CF - SMART LIFE SUPPORT",
+  "notes": "v1.17.3: strona WWW z pełnym menu na telefonie (ustawienia Wi-Fi w trybie hotspotu), świeży manifest aktualizacji\n\nPoprawki:\n- Na telefonie strona WWW miała w dolnym pasku tylko pięć pozycji i nie dało\n  się dojść do Sieci, Oprogramowania, Fotowoltaiki ani Audio – w trybie\n  hotspotu (AP / AP+STA) nie było więc jak ustawić sieci Wi-Fi. Teraz przycisk\n  menu w górnym pasku otwiera pełną listę stron jak na komputerze, a strona\n  System ma skróty do nich. Gdy panel pracuje tylko jako hotspot, Pulpit od\n  razu podpowiada ustawienie sieci.\n- „Sprawdź aktualizację” pobiera manifest przez API GitHuba zamiast z CDN,\n  który przez 5 minut po wydaniu pokazywał poprzednią wersję; stary adres\n  zostaje jako awaryjny.",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.17.2.bin",
-      "size": 4340064,
-      "sha256": "bf94bd7763fcd0010b08c1e17a72796e2c094a796639754e54b4d164ea5bd11a"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.17.3.bin",
+      "size": 4340944,
+      "sha256": "e1bdcab3a33e5ba9e426369fc1fd0629afe9fbfa10ea05e2416ace66ac8e8a7d"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.17.2.bin",
-      "size": 4342432,
-      "sha256": "2086a46cff3fcc20139975e264e1c6cd81503f3c3286ee21479aec68b43a8895"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.17.3.bin",
+      "size": 4343296,
+      "sha256": "736b026eaccaed939105bddfc8d483f8d61dd94d0cd27e301f35f23a8d72da17"
     }
   }
 }
