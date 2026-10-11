@@ -1,17 +1,17 @@
 {
-  "version": "1.17.0",
+  "version": "1.17.1",
   "date": "2026-10-11",
-  "notes": "v1.17.0: amplituner Yamaha w panelu, na WWW i w aplikacji; radio FM; zrzut ekranu panelu\n\nNowości:\n- Amplituner Yamaha MusicCast (RX-V4A) sterowany bezpośrednio z panelu po sieci\n  domowej (Yamaha Extended Control po HTTP, bez chmury). Ustawienia → Audio:\n  adres i pokój; amplituner staje się urządzeniem w tym pokoju z kafelkiem na\n  Start i w pokoju, a „Wychodzę” i „Wyłącz pokój” przełączają go w czuwanie.\n- Widok amplitunera w stylu Crestron Home Media: kafelki źródeł z ikonami\n  (HDMI, TV, AUDIO1–5, Bluetooth, tuner, USB, AirPlay, Spotify, radio\n  internetowe; przytrzymanie nadaje własną nazwę, np. CD lub AUX), suwak\n  głośności z wyciszeniem, osobny poziom startowy każdego źródła, karta „teraz\n  gra” z przewijaniem, powtarzaniem i presetami, a dalej zakładki Dźwięk\n  (program, dekoder surround, bas/soprany/dialog/subwoofer, Pure Direct,\n  Enhancer, Extra Bass, Adaptive DRC), Wyjścia (głośniki strefy B z własną\n  głośnością, HDMI OUT), Radio, Pilot (kursor i menu ekranowe, sceny, timer\n  snu) i Więcej (Bluetooth, wyświetlacz, łącze MusicCast, opóźnienie audio).\n  W poziomie źródła zajmują lewą kolumnę.\n- Radio FM: lista stacji z nazwami i logotypami na panelu. Skanowanie pasma\n  przez amplituner z nazwami z RDS, import jego presetów, dodawanie ręczne po\n  częstotliwości; logotypy po nazwie stacji (radio-browser.info + miniatura\n  JPEG przez images.weserv.nl). Wymaga anteny FM w amplitunerze.\n- Całe API amplitunera przez panel: GET/POST /api/audio (ponad 30 akcji),\n  /api/audio/yxc (dowolne wywołanie YXC, także zdalnie przez relay),\n  /api/radio, /api/radio/logo. Strona WWW ma zakładkę Audio z konsolą API.\n- GET /api/screen.bmp: zrzut tego, co jest na ekranie panelu.\n\nPoprawki:\n- Klimatyzacja: akcje „Wychodzę”/„Wyłącz pokój” obejmują amplituner.\n- Odczyt list z amplitunera (wejścia, programy, presety) był pusty: parser\n  z filtrem odrzucał odpowiedź bez pola response_code, a strumień TCP był\n  czytany po kawałkach. Oba błędy usunięte.",
+  "notes": "v1.17.1: aktualizacja OTA znów działa; wybór dostawcy klimatyzacji: ConnectLife, Smart Life (chmura) lub Smart Life (lokalnie)\n\nPoprawki:\n- Aktualizacja OTA nie zawiesza się już na 0–5 % i nie zrywa Wi-Fi: obraz jest\n  pobierany w porcjach po 32 KB na jednym połączeniu, więc pamięć wewnętrzna\n  panelu nie kończy się w trakcie pobierania. Na czas instalacji amplituner,\n  falownik i kamera czekają, a przy zbyt małej ilości wolnej pamięci panel\n  prosi o restart zamiast tracić sieć.\n\nNowości:\n- Ustawienia → Klimatyzacja → Dostawca (API): obok ConnectLife można wybrać\n  Smart Life / Tuya Smart – przez chmurę (klucze projektu z iot.tuya.com,\n  centrum danych) albo lokalnie po sieci domowej (protokół Tuya 3.3/3.4/3.5,\n  bez żadnej chmury; wystarczy id urządzenia i klucz lokalny z konta aplikacji,\n  które wypisuje tools/smartlife/local_keys.sh po zeskanowaniu kodu QR\n  w aplikacji Smart Life).\n- Jednostki Smart Life konfiguruje się na stronie WWW panelu i w aplikacji\n  (lista jednostek, klucze, pokój, numery DP dla nietypowych produktów);\n  panel pokazuje stan i liczbę dostępnych jednostek.\n- Przyciski, których dany klimatyzator nie ma (np. Turbo, Cichy), są ukrywane\n  na panelu, w WWW i w aplikacji.\n- Opis obu wariantów Smart Life w docs/smartlife.md.",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.17.0.bin",
-      "size": 4255440,
-      "sha256": "98a1d0965b040e5be6c1284fc0b9133d352a6e983eb72e0cfaa23d27c48502d9"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.17.1.bin",
+      "size": 4337568,
+      "sha256": "7572de10c7bb7d3a4de6354f52b9ea0cf28b5faa248c5313090a6faa0f28b34c"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.17.0.bin",
-      "size": 4257824,
-      "sha256": "fe3b481e412715502e465dd3eb7f66e7becb11413f7eb48d2756a9ec2ff0fa3b"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.17.1.bin",
+      "size": 4339936,
+      "sha256": "ff3c49e3d8ab9abbe99aacc47586d55e6610de2f5711b677894fda986226ede7"
     }
   }
 }

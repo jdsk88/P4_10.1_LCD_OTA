@@ -1,31 +1,22 @@
-v1.17.0: amplituner Yamaha w panelu, na WWW i w aplikacji; radio FM; zrzut ekranu panelu
-
-Nowości:
-- Amplituner Yamaha MusicCast (RX-V4A) sterowany bezpośrednio z panelu po sieci
-  domowej (Yamaha Extended Control po HTTP, bez chmury). Ustawienia → Audio:
-  adres i pokój; amplituner staje się urządzeniem w tym pokoju z kafelkiem na
-  Start i w pokoju, a „Wychodzę” i „Wyłącz pokój” przełączają go w czuwanie.
-- Widok amplitunera w stylu Crestron Home Media: kafelki źródeł z ikonami
-  (HDMI, TV, AUDIO1–5, Bluetooth, tuner, USB, AirPlay, Spotify, radio
-  internetowe; przytrzymanie nadaje własną nazwę, np. CD lub AUX), suwak
-  głośności z wyciszeniem, osobny poziom startowy każdego źródła, karta „teraz
-  gra” z przewijaniem, powtarzaniem i presetami, a dalej zakładki Dźwięk
-  (program, dekoder surround, bas/soprany/dialog/subwoofer, Pure Direct,
-  Enhancer, Extra Bass, Adaptive DRC), Wyjścia (głośniki strefy B z własną
-  głośnością, HDMI OUT), Radio, Pilot (kursor i menu ekranowe, sceny, timer
-  snu) i Więcej (Bluetooth, wyświetlacz, łącze MusicCast, opóźnienie audio).
-  W poziomie źródła zajmują lewą kolumnę.
-- Radio FM: lista stacji z nazwami i logotypami na panelu. Skanowanie pasma
-  przez amplituner z nazwami z RDS, import jego presetów, dodawanie ręczne po
-  częstotliwości; logotypy po nazwie stacji (radio-browser.info + miniatura
-  JPEG przez images.weserv.nl). Wymaga anteny FM w amplitunerze.
-- Całe API amplitunera przez panel: GET/POST /api/audio (ponad 30 akcji),
-  /api/audio/yxc (dowolne wywołanie YXC, także zdalnie przez relay),
-  /api/radio, /api/radio/logo. Strona WWW ma zakładkę Audio z konsolą API.
-- GET /api/screen.bmp: zrzut tego, co jest na ekranie panelu.
+v1.17.1: aktualizacja OTA znów działa; wybór dostawcy klimatyzacji: ConnectLife, Smart Life (chmura) lub Smart Life (lokalnie)
 
 Poprawki:
-- Klimatyzacja: akcje „Wychodzę”/„Wyłącz pokój” obejmują amplituner.
-- Odczyt list z amplitunera (wejścia, programy, presety) był pusty: parser
-  z filtrem odrzucał odpowiedź bez pola response_code, a strumień TCP był
-  czytany po kawałkach. Oba błędy usunięte.
+- Aktualizacja OTA nie zawiesza się już na 0–5 % i nie zrywa Wi-Fi: obraz jest
+  pobierany w porcjach po 32 KB na jednym połączeniu, więc pamięć wewnętrzna
+  panelu nie kończy się w trakcie pobierania. Na czas instalacji amplituner,
+  falownik i kamera czekają, a przy zbyt małej ilości wolnej pamięci panel
+  prosi o restart zamiast tracić sieć.
+
+Nowości:
+- Ustawienia → Klimatyzacja → Dostawca (API): obok ConnectLife można wybrać
+  Smart Life / Tuya Smart – przez chmurę (klucze projektu z iot.tuya.com,
+  centrum danych) albo lokalnie po sieci domowej (protokół Tuya 3.3/3.4/3.5,
+  bez żadnej chmury; wystarczy id urządzenia i klucz lokalny z konta aplikacji,
+  które wypisuje tools/smartlife/local_keys.sh po zeskanowaniu kodu QR
+  w aplikacji Smart Life).
+- Jednostki Smart Life konfiguruje się na stronie WWW panelu i w aplikacji
+  (lista jednostek, klucze, pokój, numery DP dla nietypowych produktów);
+  panel pokazuje stan i liczbę dostępnych jednostek.
+- Przyciski, których dany klimatyzator nie ma (np. Turbo, Cichy), są ukrywane
+  na panelu, w WWW i w aplikacji.
+- Opis obu wariantów Smart Life w docs/smartlife.md.
