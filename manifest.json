@@ -1,17 +1,17 @@
 {
-  "version": "1.17.5",
-  "date": "2026-10-11",
-  "notes": "v1.17.5: /api/ac przyjmuje dowolną właściwość z flagą raw (testy funkcji klimatyzatora)\n\nPoprawki:\n- POST /api/ac z \"raw\": true wysyła do chmury klimatyzacji dowolną\n  właściwość t_* / f_* bez listy dozwolonych – do sprawdzania, które\n  polecenia jednostka naprawdę wykonuje (bramka ConnectLife przyjmuje każdą\n  nazwę bez błędu).",
+  "version": "1.17.6",
+  "date": "2026-10-12",
+  "notes": "1.17.6 tuya local vesser a/c control",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.17.5.bin",
-      "size": 4345840,
-      "sha256": "80770687118501f2d70413c9db597bf356828e86ff63c96103fef7341c5ec584"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.17.6.bin",
+      "size": 4367504,
+      "sha256": "c17b3d1cb69cc9446dc5e3494c6d76b0a0772e22a4b6ddd6ccd57597feb849d5"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.17.5.bin",
-      "size": 4348208,
-      "sha256": "b2c152283efa72fad544af2ba82d9670d6937cde9f9ea3a686bd50ac95f3a395"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.17.6.bin",
+      "size": 4369872,
+      "sha256": "b086adf096515a8c8b93452525017f4e84769148e355c989153001a858eb49bd"
     }
   }
 }
