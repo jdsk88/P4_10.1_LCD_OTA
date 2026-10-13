@@ -1,17 +1,17 @@
 {
-  "version": "1.18.1",
+  "version": "1.18.2",
   "date": "2026-10-13",
-  "notes": "v1.18.1: tryb edycji układu klimatyzatora pod ołówkiem\n\nPoprawki:\n- Przestawianie przycisków na ekranie klimatyzatora wymaga teraz włączenia\n  trybu edycji ołówkiem w nagłówku; przytrzymanie przycisku poza nim nic\n  nie podnosi, więc nie ma przypadkowych przeciągnięć.\n- W trybie edycji przestawialne przyciski (funkcje, tryby, sen) mają białą\n  ramkę, przeciąganie zaczyna się od dotknięcia, zablokowane przyciski też\n  można przenosić, a żadne dotknięcie nie wysyła polecenia do jednostki.\n  Ołówek kończy edycję.",
+  "notes": "v1.18.2: nastawa temperatury ukryta i zablokowana w trybach Wentylator i Osuszanie\n\nPoprawki:\n- Ekran klimatyzatora: w trybach Wentylator i Osuszanie jednostka nie ma\n  nastawy temperatury, więc przyciski − / + są nieaktywne, pokrętło na\n  pierścieniu znika i nie da się go przeciągać, a wartość nastawy jest\n  ukryta; pod temperaturą pokoju widać nazwę trybu.",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.18.1.bin",
-      "size": 4381200,
-      "sha256": "10651231dcdc70a4b73c8097ff08d1ddbb882a6705f674f358429ef2b396def3"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.18.2.bin",
+      "size": 4381392,
+      "sha256": "b1ac239364dac00345f2355fc1088acdfd09c4cc66d101c6832a37645be55c5d"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.18.1.bin",
-      "size": 4383600,
-      "sha256": "69bb3af0cf93f2adf89dcc2a9e8196677e55c4cce03568260f3e64debf813b8c"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.18.2.bin",
+      "size": 4383792,
+      "sha256": "0900bd35e4f0b936b034d5f54bf11f5b0a7ae8ff00f397eaea5169a25c638a8b"
     }
   }
 }

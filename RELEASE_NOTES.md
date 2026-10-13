@@ -1,10 +1,7 @@
-v1.18.1: tryb edycji układu klimatyzatora pod ołówkiem
+v1.18.2: nastawa temperatury ukryta i zablokowana w trybach Wentylator i Osuszanie
 
 Poprawki:
-- Przestawianie przycisków na ekranie klimatyzatora wymaga teraz włączenia
-  trybu edycji ołówkiem w nagłówku; przytrzymanie przycisku poza nim nic
-  nie podnosi, więc nie ma przypadkowych przeciągnięć.
-- W trybie edycji przestawialne przyciski (funkcje, tryby, sen) mają białą
-  ramkę, przeciąganie zaczyna się od dotknięcia, zablokowane przyciski też
-  można przenosić, a żadne dotknięcie nie wysyła polecenia do jednostki.
-  Ołówek kończy edycję.
+- Ekran klimatyzatora: w trybach Wentylator i Osuszanie jednostka nie ma
+  nastawy temperatury, więc przyciski − / + są nieaktywne, pokrętło na
+  pierścieniu znika i nie da się go przeciągać, a wartość nastawy jest
+  ukryta; pod temperaturą pokoju widać nazwę trybu.
