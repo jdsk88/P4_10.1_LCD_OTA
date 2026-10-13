@@ -1,17 +1,17 @@
 {
-  "version": "1.17.6",
-  "date": "2026-10-12",
-  "notes": "1.17.6 tuya local vesser a/c control",
+  "version": "1.18.1",
+  "date": "2026-10-13",
+  "notes": "v1.18.1: tryb edycji układu klimatyzatora pod ołówkiem\n\nPoprawki:\n- Przestawianie przycisków na ekranie klimatyzatora wymaga teraz włączenia\n  trybu edycji ołówkiem w nagłówku; przytrzymanie przycisku poza nim nic\n  nie podnosi, więc nie ma przypadkowych przeciągnięć.\n- W trybie edycji przestawialne przyciski (funkcje, tryby, sen) mają białą\n  ramkę, przeciąganie zaczyna się od dotknięcia, zablokowane przyciski też\n  można przenosić, a żadne dotknięcie nie wysyła polecenia do jednostki.\n  Ołówek kończy edycję.",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.17.6.bin",
-      "size": 4367504,
-      "sha256": "c17b3d1cb69cc9446dc5e3494c6d76b0a0772e22a4b6ddd6ccd57597feb849d5"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.18.1.bin",
+      "size": 4381200,
+      "sha256": "10651231dcdc70a4b73c8097ff08d1ddbb882a6705f674f358429ef2b396def3"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.17.6.bin",
-      "size": 4369872,
-      "sha256": "b086adf096515a8c8b93452525017f4e84769148e355c989153001a858eb49bd"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.18.1.bin",
+      "size": 4383600,
+      "sha256": "69bb3af0cf93f2adf89dcc2a9e8196677e55c4cce03568260f3e64debf813b8c"
     }
   }
 }
