@@ -1,7 +1,12 @@
-v1.18.2: nastawa temperatury ukryta i zablokowana w trybach Wentylator i Osuszanie
+v1.18.3: kafelek fotowoltaiki na ekranie głównym i w Urządzeniach, większe przyciski paska i nagłówków
 
 Poprawki:
-- Ekran klimatyzatora: w trybach Wentylator i Osuszanie jednostka nie ma
-  nastawy temperatury, więc przyciski − / + są nieaktywne, pokrętło na
-  pierścieniu znika i nie da się go przeciągać, a wartość nastawy jest
-  ukryta; pod temperaturą pokoju widać nazwę trybu.
+- Falownik pojawia się jako kafelek na ekranie głównym i na stronie
+  Urządzenia, gdy tylko ma wpisany adres: moc chwilowa, energia dnia i stan
+  pracy; dotknięcie otwiera Ustawienia → Fotowoltaika.
+- Podstrona Fotowoltaika: karta mocy nie styka się już z siatką kafelków,
+  kafelki odczytów są wyższe.
+- Pasek stanu wyższy (68 px), „…” jako widoczny okrągły przycisk ok. 9,5 mm,
+  koperta z pełnym celem dotykowym; przyciski wstecz, „…” i ołówek
+  w nagłówkach ekranów urządzeń 72 px (ok. 12 mm), zgodnie z zaleceniami dla
+  paneli dotykowych.

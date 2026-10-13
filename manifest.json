@@ -1,17 +1,17 @@
 {
-  "version": "1.18.2",
+  "version": "1.18.3",
   "date": "2026-10-13",
-  "notes": "v1.18.2: nastawa temperatury ukryta i zablokowana w trybach Wentylator i Osuszanie\n\nPoprawki:\n- Ekran klimatyzatora: w trybach Wentylator i Osuszanie jednostka nie ma\n  nastawy temperatury, więc przyciski − / + są nieaktywne, pokrętło na\n  pierścieniu znika i nie da się go przeciągać, a wartość nastawy jest\n  ukryta; pod temperaturą pokoju widać nazwę trybu.",
+  "notes": "v1.18.3: kafelek fotowoltaiki na ekranie głównym i w Urządzeniach, większe przyciski paska i nagłówków\n\nPoprawki:\n- Falownik pojawia się jako kafelek na ekranie głównym i na stronie\n  Urządzenia, gdy tylko ma wpisany adres: moc chwilowa, energia dnia i stan\n  pracy; dotknięcie otwiera Ustawienia → Fotowoltaika.\n- Podstrona Fotowoltaika: karta mocy nie styka się już z siatką kafelków,\n  kafelki odczytów są wyższe.\n- Pasek stanu wyższy (68 px), „…” jako widoczny okrągły przycisk ok. 9,5 mm,\n  koperta z pełnym celem dotykowym; przyciski wstecz, „…” i ołówek\n  w nagłówkach ekranów urządzeń 72 px (ok. 12 mm), zgodnie z zaleceniami dla\n  paneli dotykowych.",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.18.2.bin",
-      "size": 4381392,
-      "sha256": "b1ac239364dac00345f2355fc1088acdfd09c4cc66d101c6832a37645be55c5d"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.18.3.bin",
+      "size": 4383680,
+      "sha256": "98f699ea3ea6b8367b28d1cd23740b25aa6ae273f9edd1ff46603de362984a16"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.18.2.bin",
-      "size": 4383792,
-      "sha256": "0900bd35e4f0b936b034d5f54bf11f5b0a7ae8ff00f397eaea5169a25c638a8b"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.18.3.bin",
+      "size": 4386064,
+      "sha256": "5cd01c5bf7bfac19d2096c0a67b203c8cda9420e743d3ca9bf2f9148cda47709"
     }
   }
 }
