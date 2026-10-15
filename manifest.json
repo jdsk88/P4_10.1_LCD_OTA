@@ -1,17 +1,17 @@
 {
-  "version": "1.18.3",
-  "date": "2026-10-13",
-  "notes": "v1.18.3: kafelek fotowoltaiki na ekranie głównym i w Urządzeniach, większe przyciski paska i nagłówków\n\nPoprawki:\n- Falownik pojawia się jako kafelek na ekranie głównym i na stronie\n  Urządzenia, gdy tylko ma wpisany adres: moc chwilowa, energia dnia i stan\n  pracy; dotknięcie otwiera Ustawienia → Fotowoltaika.\n- Podstrona Fotowoltaika: karta mocy nie styka się już z siatką kafelków,\n  kafelki odczytów są wyższe.\n- Pasek stanu wyższy (68 px), „…” jako widoczny okrągły przycisk ok. 9,5 mm,\n  koperta z pełnym celem dotykowym; przyciski wstecz, „…” i ołówek\n  w nagłówkach ekranów urządzeń 72 px (ok. 12 mm), zgodnie z zaleceniami dla\n  paneli dotykowych.",
+  "version": "1.21.0",
+  "date": "2026-10-15",
+  "notes": "v1.21.0: serwer DNS w panelu dla boxa BeSMART (routery bez nadpisania DNS, np. Netgear)\n\nPanel może być serwerem DNS domu (UDP 53): zapytania przekazuje do serwera nadrzędnego (1.1.1.1, zapasowo 8.8.8.8), a na api.besmart-home.com odpowiada własnym adresem, dopóki ogrzewanie pracuje w trybie lokalnym. W routerze wystarczy wpisać adres panelu jako główny DNS (Netgear: Internet Setup -> Domain Name Server), publiczny jako zapasowy, i zrestartować box. Włącznik w Ustawienia -> Ogrzewanie (tryb lokalny) oraz na stronie WWW, z licznikami zapytań.\n\nPoprawki:\n- /api/heat: sekcja dns; /api/heatsettings: dns_enabled, dns_upstream\n- docs/besmart.md: krok po kroku dla Netgear R6400v2",
   "firmware": {
     "jc8012p4a1": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.18.3.bin",
-      "size": 4383680,
-      "sha256": "98f699ea3ea6b8367b28d1cd23740b25aa6ae273f9edd1ff46603de362984a16"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1-v1.21.0.bin",
+      "size": 4456000,
+      "sha256": "cdeacadc7fcf280666a0a51de607de2b4ad2965a7b68eb265621133c000a4382"
     },
     "jc8012p4a1_r3": {
-      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.18.3.bin",
-      "size": 4386064,
-      "sha256": "5cd01c5bf7bfac19d2096c0a67b203c8cda9420e743d3ca9bf2f9148cda47709"
+      "url": "https://raw.githubusercontent.com/jdsk88/P4_10.1_LCD_OTA/main/firmware-jc8012p4a1_r3-v1.21.0.bin",
+      "size": 4458368,
+      "sha256": "629b7d85b12e144654bacc2c34497e4b126adf3dfef0e20ff13c509071edb4d7"
     }
   }
 }
